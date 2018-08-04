@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from './auth.service';
+import { Component } from '@angular/core';
 // import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -6,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
 
-  constructor() { }
+  constructor(private myAuth: AuthService, private router: Router) {
 
-  ngOnInit() {
+    this.myAuth.user$.subscribe(user => {
+      if (user) {
+        const url = sessionStorage.getItem('returnUrl');
+        this.router.navigateByUrl(url);
+      }
+    });
+
   }
+
 }
