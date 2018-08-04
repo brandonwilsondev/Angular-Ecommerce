@@ -1,3 +1,4 @@
+import { AngularFireAuth, AngularFireAuthModule } from 'angularfire2/auth';
 import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
 import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
 import { OrderSuccessComponent } from './order-success/order-success.component';
@@ -20,6 +21,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductsComponent } from './products/products.component';
 import { LoginComponent } from './login/login.component';
 import { MyOrdersComponent } from './my-orders/my-orders.component';
+import { AngularFireModule } from '../../node_modules/angularfire2';
 
 @NgModule({
   declarations: [
@@ -41,6 +43,15 @@ import { MyOrdersComponent } from './my-orders/my-orders.component';
     FormsModule,
     ReactiveFormsModule,
     MaterialModule,
+    AngularFireAuthModule,
+    AngularFireModule.initializeApp({
+      apiKey: 'AIzaSyCrKZz2pJRHGMKndvVyaiwtd_Ou3hR1_t0',
+      authDomain: 'oshop-1b983.firebaseapp.com',
+      databaseURL: 'https://oshop-1b983.firebaseio.com',
+      projectId: 'oshop-1b983',
+      storageBucket: 'oshop-1b983.appspot.com',
+      messagingSenderId: '348123918521'
+    }),
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
       { path: 'products', component: ProductsComponent },

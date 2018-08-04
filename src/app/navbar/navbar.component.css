@@ -11,6 +11,11 @@ ul#menu li {
   margin-left: 2em;
 }
 
-img, ul#menu li:hover {
+img,
+ul#menu li:hover {
   cursor: pointer;
+}
+
+mat-toolbar-row ul#menu {
+  margin-bottom: 0 ;
 }
