@@ -6,6 +6,10 @@
   flex: 1 1 auto;
 }
 
+mat-toolbar-row ul#menu {
+  margin-bottom: 0;
+}
+
 ul#menu li {
   display: inline;
   margin-left: 2em;
@@ -14,8 +18,4 @@ ul#menu li {
 img,
 ul#menu li:hover {
   cursor: pointer;
-}
-
-mat-toolbar-row ul#menu {
-  margin-bottom: 0 ;
 }
