@@ -2,14 +2,14 @@
 
 
   <mat-toolbar-row>
-    <img  routerLink='/' src="../../assets/img/cart.png" />
+    <img routerLink='/' src="../../assets/img/cart.png" />
     <ul id="menu">
       <!-- <li routerLink='/'>MyApp</li> -->
       <li routerLink='/shopping-cart'>Shopping Cart</li>
-      <li routerLink='/login'>Login</li>
+      <li *ngIf="!user" routerLink='/login'>Login</li>
     </ul>
-    <span class="example-spacer"></span>
-    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+    <span *ngIf="user" class="example-spacer"></span>
+    <button mat-button [matMenuTriggerFor]="menu">{{user?.displayName}}</button>
     <mat-menu #menu="matMenu">
       <button mat-menu-item routerLink='/my/orders'>My Orders</button>
       <button mat-menu-item routerLink='/admin/orders'>Manage Orders</button>
