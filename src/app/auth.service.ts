@@ -8,7 +8,8 @@ import * as firebase from 'firebase';
 })
 
 export class AuthService {
-  user$: Observable<firebase.User>;
+  user$: Observable<firebase.User>; //  -- removing bcz map operator was not working
+
   constructor(private afAuth: AngularFireAuth) {
     // before async pipe
     // this.afAuth.authState.subscribe(user => this.user = user);
