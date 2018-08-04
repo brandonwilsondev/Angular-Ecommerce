@@ -11,7 +11,6 @@ export class NavbarComponent {
   constructor(private afAuth: AngularFireAuth) {
     this.afAuth.authState.subscribe(info => {
       console.log(info);
-
     });
   }
 
