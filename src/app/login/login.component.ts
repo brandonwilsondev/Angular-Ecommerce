@@ -7,18 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  showSpinner: boolean;
+  spinner: boolean;
   constructor(private myAuth: AuthService) { }
 
 
   login() {
-    this.showSpinner = true;
-    this.myAuth.login().then(res => {
-      console.log(res);
-      if (res) {
-        this.showSpinner = false;
-      }
-    });
+
+    this.spinner = true;
+    this.myAuth.login();
+
   }
 
 
