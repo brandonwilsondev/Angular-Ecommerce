@@ -2,8 +2,8 @@
 
 /* importing themes from angular material */
 
-/* @import '~@angular/material/prebuilt-themes/deeppurple-amber.css'; */
-@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+/* @import '~@angular/material/prebuilt-themes/indigo-pink.css'; */
 /* @import '~@angular/material/prebuilt-themes/pink-bluegrey.css'; */
 /* @import '~@angular/material/prebuilt-themes/purple-green.css'; */
 @import url('../src/assets/css/bootstrap-4.css');
