@@ -6,11 +6,11 @@
     <ul id="menu">
       <!-- <li routerLink='/'>MyApp</li> -->
       <li routerLink='/shopping-cart'>Shopping Cart</li>
-      <li *ngIf=" ! ( user$ | async ) "routerLink='/login'>Login</li>
+      <li *ngIf=" ! ( myAuth.user$ | async ) "routerLink='/login'>Login</li>
 
     </ul>
     <span class="example-spacer"></span>
-    <button *ngIf="user$ | async as user " mat-button [matMenuTriggerFor]="menu">{{user?.displayName}}</button>
+    <button *ngIf="myAuth.user$ | async as user " mat-button [matMenuTriggerFor]="menu">{{user?.displayName}}</button>
     <mat-menu #menu="matMenu">
       <button mat-menu-item routerLink='/my/orders'>My Orders</button>
       <button mat-menu-item routerLink='/admin/orders'>Manage Orders</button>
