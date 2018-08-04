@@ -1,5 +1,7 @@
-import { AuthService } from './auth.service';
-import { AngularFireAuth, AngularFireAuthModule } from 'angularfire2/auth';
+
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireModule } from 'angularfire2';
+
 import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
 import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
 import { OrderSuccessComponent } from './order-success/order-success.component';
@@ -22,7 +24,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductsComponent } from './products/products.component';
 import { LoginComponent } from './login/login.component';
 import { MyOrdersComponent } from './my-orders/my-orders.component';
-import { AngularFireModule } from '../../node_modules/angularfire2';
+
+import { AuthGuardService } from './auth-guard.service';
+import { AuthService } from './auth.service';
 
 @NgModule({
   declarations: [
@@ -68,7 +72,10 @@ import { AngularFireModule } from '../../node_modules/angularfire2';
 
     ]),
   ],
-  providers: [AuthService],
+  providers: [
+    AuthService,
+    AuthGuardService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
