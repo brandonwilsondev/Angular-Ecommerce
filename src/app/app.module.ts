@@ -1,3 +1,4 @@
+import { AuthService } from './auth.service';
 import { AngularFireAuth, AngularFireAuthModule } from 'angularfire2/auth';
 import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
 import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
@@ -67,7 +68,7 @@ import { AngularFireModule } from '../../node_modules/angularfire2';
 
     ]),
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
