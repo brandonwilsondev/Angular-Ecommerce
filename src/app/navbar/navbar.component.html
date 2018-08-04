@@ -1,0 +1,21 @@
+<mat-toolbar color="primary">
+
+
+  <mat-toolbar-row>
+    <img  routerLink='/' src="../../assets/img/cart.png" />
+    <ul id="menu">
+      <!-- <li routerLink='/'>MyApp</li> -->
+      <li routerLink='/shopping-cart'>Shopping Cart</li>
+      <li routerLink='/login'>Login</li>
+    </ul>
+    <span class="example-spacer"></span>
+    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item routerLink='/my/orders'>My Orders</button>
+      <button mat-menu-item routerLink='/admin/orders'>Manage Orders</button>
+      <button mat-menu-item routerLink='/admin/products'>Manage Products</button>
+      <button mat-menu-item routerLink=''>Logout</button>
+    </mat-menu>
+
+  </mat-toolbar-row>
+</mat-toolbar>
