@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* importing themes from angular material */
+
+/* @import '~@angular/material/prebuilt-themes/deeppurple-amber.css'; */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+/* @import '~@angular/material/prebuilt-themes/pink-bluegrey.css'; */
+/* @import '~@angular/material/prebuilt-themes/purple-green.css'; */
+@import url('../src/assets/css/bootstrap-4.css');
+@import url('../src/assets/css/font.css');
+
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Encode Sans Semi Expanded', 'Roboto', sans-serif;
+  font-size: 16px;
+
+}
