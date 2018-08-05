@@ -17,7 +17,10 @@ export class AppComponent {
       if (user) {
         userServ.save(user);
         const url = sessionStorage.getItem('returnUrl');
-        this.router.navigateByUrl(url);
+        if (url) {
+          this.router.navigate([url]);
+        }
+
       }
     });
 
