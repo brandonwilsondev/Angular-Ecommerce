@@ -3,16 +3,18 @@
 
     <form class="example-form" #f="ngForm" (ngSubmit)="save(f.value)">
       <mat-form-field class="example-full-width">
-        <input matInput ngModel name="title" placeholder="Title">
+        <input matInput #title="ngModel" ngModel name="title" placeholder="Title" required>
+
       </mat-form-field>
+
 
       <mat-form-field class="example-full-width">
         <!-- <mat-icon md-font-set="regular-font">%</mat-icon> -->
-        <input matInput type="number" ngModel name="price" placeholder="Price">
+        <input matInput type="number" ngModel name="price" placeholder="Price" required>
       </mat-form-field>
 
       <mat-form-field>
-        <mat-select ngModel name="category" placeholder="Categories">
+        <mat-select ngModel name="category" placeholder="Categories" required>
           <!-- <mat-option [value]="None">
             {{"Please Select"}}
           </mat-option> -->
@@ -24,10 +26,15 @@
 
 
       <mat-form-field class="example-full-width">
-        <input matInput ngModel name="imageUrl" placeholder="Image URL">
+        <input matInput ngModel name="imageUrl" placeholder="Image URL" required>
       </mat-form-field>
 
-      <button mat-raised-button color="primary" routerLink="/admin/products/new">Save</button>
+      <button 
+        mat-raised-button color="primary" 
+        routerLink="/admin/products/new" 
+        [disabled]="f.invalid">
+        Save
+      </button>
     </form>
 
   </div>
