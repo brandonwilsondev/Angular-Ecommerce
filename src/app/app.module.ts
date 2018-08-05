@@ -24,6 +24,7 @@ import { RouterModule } from '@angular/router';
 // importing material module
 import { MaterialModule } from './material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CustomFormsModule } from 'ng2-validation';
 import { ProductsComponent } from './products/products.component';
 import { LoginComponent } from './login/login.component';
 import { MyOrdersComponent } from './my-orders/my-orders.component';
@@ -53,6 +54,8 @@ import { ProductService } from './product.service';
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    CustomFormsModule,
+
     ReactiveFormsModule,
     MaterialModule,
     AngularFireDatabaseModule,
