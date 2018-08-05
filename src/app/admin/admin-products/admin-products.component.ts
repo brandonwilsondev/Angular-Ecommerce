@@ -8,11 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminProductsComponent implements OnInit {
 
-  products$;
-  constructor(private prodServ: ProductService ) { }
+  products = [];
+  constructor(private prodServ: ProductService) { }
 
   ngOnInit() {
-    this.products$ = this.prodServ.getAll();
+    this.prodServ.getAll().subscribe(prod => {
+      prod.forEach(data => {
+        const obj = data.payload.toJSON();
+        obj['$key'] = data.key;
+        this.products.push(obj);
+      });
+      // console.log(this.products);
+
+    });
   }
 
 
