@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col">
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Title">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <!-- <mat-icon md-font-set="regular-font">%</mat-icon> -->
+        <input matInput placeholder="Price">
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-select placeholder="Categories">
+          <!-- <mat-option [value]="None">
+            {{"Please Select"}}
+          </mat-option> -->
+          <mat-option *ngFor="let c of categories" [value]="c.key">
+            {{c.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Image URL">
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" routerLink="/admin/products/new">Save</button>
+    </form>
+
+  </div>
+  <div class="col">
+    lol
+  </div>
+</div>
