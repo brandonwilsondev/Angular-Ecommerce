@@ -32,6 +32,7 @@ import { AuthGuard } from './auth-guard.service';
 import { AuthService } from './auth.service';
 import { UserService } from './user.service';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { ProductService } from './product.service';
 
 @NgModule({
   declarations: [
@@ -88,7 +89,8 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     AuthGuard,
     AdminAuthGuard,
     UserService,
-    CategoryService
+    CategoryService,
+    ProductService,
   ],
   bootstrap: [AppComponent]
 })
