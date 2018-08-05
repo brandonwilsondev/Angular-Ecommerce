@@ -2,21 +2,33 @@
   <div class="row admin-btn">
     <div class="col">
       <!-- <div class="button-row"> -->
-  
-        <button 
-        mat-raised-button color="primary"
-        routerLink="/admin/products/new"
-        >Add New Product</button>
-  
+
+      <button mat-raised-button color="primary" routerLink="/admin/products/new">Add New Product</button>
+
       <!-- </div> -->
     </div>
   </div>
 
   <div class="row prod-table">
     <div class="col">
-      lol
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let p of products">
+            <td>{{p.title}}</td>
+            <td>{{p.price}}</td>
+            <td>
+              <a [routerLink]="['/admin/products/', p.$key]">Edit</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
-  
-  
