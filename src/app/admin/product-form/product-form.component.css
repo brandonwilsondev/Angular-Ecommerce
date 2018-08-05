@@ -25,3 +25,6 @@
 mat-card>img {
   width: 80%;
 }
+.mat-card-image:first-child{
+  margin-top: 0;
+}
