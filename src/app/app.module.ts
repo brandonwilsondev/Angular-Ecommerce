@@ -27,6 +27,8 @@ import { MyOrdersComponent } from './my-orders/my-orders.component';
 
 import { AuthGuard } from './auth-guard.service';
 import { AuthService } from './auth.service';
+import { UserService } from './user.service';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 @NgModule({
   declarations: [
@@ -48,6 +50,7 @@ import { AuthService } from './auth.service';
     FormsModule,
     ReactiveFormsModule,
     MaterialModule,
+    AngularFireDatabaseModule,
     AngularFireAuthModule,
     AngularFireModule.initializeApp({
       apiKey: 'AIzaSyCrKZz2pJRHGMKndvVyaiwtd_Ou3hR1_t0',
@@ -76,7 +79,8 @@ import { AuthService } from './auth.service';
   ],
   providers: [
     AuthService,
-    AuthGuard
+    AuthGuard,
+    UserService
   ],
   bootstrap: [AppComponent]
 })
