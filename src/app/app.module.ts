@@ -1,3 +1,5 @@
+import { CategoryService } from './category.service';
+import { ProductFormComponent } from './admin/product-form/product-form.component';
 import { AdminAuthGuard } from './admin-auth-guard.service';
 
 import { AngularFireAuthModule } from 'angularfire2/auth';
@@ -43,7 +45,8 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     OrderSuccessComponent,
     LoginComponent,
     AdminProductsComponent,
-    AdminOrdersComponent
+    AdminOrdersComponent,
+    ProductFormComponent
   ],
   imports: [
     BrowserModule,
@@ -72,6 +75,8 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
       { path: 'order-success', component: OrderSuccessComponent, canActivate: [AuthGuard] },
 
       { path: 'admin/products', component: AdminProductsComponent, canActivate: [AuthGuard] },
+      { path: 'admin/products/new', component: ProductFormComponent, canActivate: [AuthGuard] },
+
       { path: 'admin/orders', component: AdminOrdersComponent, canActivate: [AuthGuard] },
 
 
@@ -82,7 +87,8 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     AuthService,
     AuthGuard,
     AdminAuthGuard,
-    UserService
+    UserService,
+    CategoryService
   ],
   bootstrap: [AppComponent]
 })
