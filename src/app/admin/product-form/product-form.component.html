@@ -1,17 +1,18 @@
 <div class="row">
   <div class="col">
-    <form class="example-form">
+
+    <form class="example-form" #f="ngForm" (ngSubmit)="save(f.value)">
       <mat-form-field class="example-full-width">
-        <input matInput placeholder="Title">
+        <input matInput ngModel name="title" placeholder="Title">
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
         <!-- <mat-icon md-font-set="regular-font">%</mat-icon> -->
-        <input matInput placeholder="Price">
+        <input matInput ngModel name="price" placeholder="Price">
       </mat-form-field>
 
       <mat-form-field>
-        <mat-select placeholder="Categories">
+        <mat-select ngModel name="category" placeholder="Categories">
           <!-- <mat-option [value]="None">
             {{"Please Select"}}
           </mat-option> -->
@@ -23,7 +24,7 @@
 
 
       <mat-form-field class="example-full-width">
-        <input matInput placeholder="Image URL">
+        <input matInput ngModel name="imageUrl" placeholder="Image URL">
       </mat-form-field>
 
       <button mat-raised-button color="primary" routerLink="/admin/products/new">Save</button>
