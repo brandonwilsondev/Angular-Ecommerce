@@ -1,3 +1,4 @@
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CategoryService } from './category.service';
 import { ProductFormComponent } from './admin/product-form/product-form.component';
 import { AdminAuthGuard } from './admin-auth-guard.service';
@@ -56,6 +57,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
     BrowserAnimationsModule,
     FormsModule,
     CustomFormsModule,
+    NgbModule.forRoot(),
 
     ReactiveFormsModule,
     MaterialModule,

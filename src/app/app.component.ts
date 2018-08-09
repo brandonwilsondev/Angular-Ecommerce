@@ -14,14 +14,17 @@ export class AppComponent {
   constructor(private myAuth: AuthService, private router: Router, private userServ: UserService) {
 
     this.myAuth.user$.subscribe(user => {
-      if (user) {
-        userServ.save(user);
-        const url = sessionStorage.getItem('returnUrl');
-        if (url) {
-          this.router.navigate([url]);
-        }
+      if (!user) { return; }
 
+      userServ.save(user);
+      const url = sessionStorage.getItem('returnUrl');
+      if (url) {
+        sessionStorage.removeItem('returnUrl');
+        this.router.navigate([url]);
       }
+
+
+
     });
 
   }
